@@ -74,7 +74,7 @@
                     );
                 } else {
                     $insertar  = "INSERT INTO usuarios (usuarios.usuario, usuarios.clave, usuarios.rol,  usuarios.estado) values (?,?,?,?)";
-                    $sentencia = $pdo->prepare($insertar);
+                    $sentencia = Self::$pdofull->prepare($insertar);
                     $sentencia->bindParam( 1, $usuario['username']);
                     $sentencia->bindParam( 2, $usuario['clave']);
                     $sentencia->bindParam( 3, $usuario['rol']);
