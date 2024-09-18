@@ -3,6 +3,8 @@
      * Cargamos todos los controladores...
      */
     require_once 'Controladores/UsuariosCtrl.php';
+    require_once 'Controladores/BarriosCtrl.php';
+    
 
 	/*
 	* Definimos que sera una aplicación de tipo JSON
@@ -21,7 +23,8 @@
         $recurso  = array_shift($peticion);                 // Obtenemos el recurso a solicitar
 
         $recursos_existentes = array(                       // Definimos los recursos existentes y validamos que la solicitud exista
-            'UsuariosCtrl'
+            'UsuariosCtrl',
+            'BarriosCtrl'
         );
 
         if (in_array( $recurso, $recursos_existentes)){
@@ -32,6 +35,9 @@
                 switch($recurso){
                     case 'UsuariosCtrl':
                         $instancia = new UsuariosCtrl($peticion);
+                        break;
+                    case 'BarriosCtrl':
+                        $instancia = new BarriosCtrl($peticion);
                         break;
                 }
 

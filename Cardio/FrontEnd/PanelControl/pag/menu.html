@@ -17,14 +17,30 @@
         </p>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a id="ControlPanelUser" href="#usuarios" class="inf">Usuarios</a></li>
+                <li><a id="ControlPanelUser" href="#cpusuario" class="inf">Usuarios</a></li>
+                <li><a id="ControlPanelPaciente" href="#cppaciente" class="inf">Pacientes</a></li>
+                <li><a id="ControlPanelCum_Programa" href="#cpcum_programas" class="inf">Cumplimiento Programa</a></li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    aria-expanded="false">Patologia de Riesgo <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a id="ControlPanelHipertension_Arterial" href="#cphipertension_arterial" class="inf">Hipertensión Arterial</a></li>
+                        <li><a id="ControlPanelHipercolesterolemia" href="#cphipercolesterolemia" class="inf">Hipercolesterolemia</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a id="ControlPanelDeabetes" href="#cpdeabete" class="inf">Deabetes</a></li>
+                        <li><a id="ControlPanelObesidad" href="#cpobesidad" class="inf">Obesidad</a></li>
+                    </ul>
+                </li>
+                
+                <li><a id="ControlPanelMedicamento" href="#cpmedicamento" class="inf">Medicamentos</a></li>
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                         aria-expanded="false">Opciones <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li> <a id="ControlPanelBarrio" href="#barrios" class="inf">Barrios</a></li>
-                        <li> <a id="ControlPanelCiudad" href="#ciudades" class="inf">Ciudades</a></li>
+                        <li> <a id="ControlPanelBarrio" href="#cpbarrio" class="inf">Barrios</a></li>
+                        <li> <a id="ControlPanelCiudad" href="#cpciudad" class="inf">Ciudades</a></li>
                     </ul>
                 </li>
 
@@ -35,13 +51,13 @@
 </nav>
 
 <div id="n_img" class="container">
-    <img src="img/fondo.jpg" class="img-responsive" alt="Cinque Terre">
+    <img src="img/fondosena.jpeg" class="img-responsive" alt="Cinque Terre">
 </div>
 
 
 <!-- -------------------------------------------------- USUARIOS ---------------------------------------------------- -->
 
-<div id="usuarios" class="container center-block oculto">
+<div id="cpusuario" class="container center-block oculto">
     <div id="alertas_usuarios"> </div>
 
     <h1 class="blue center title">Gestion y Control de Usuarios</h1>
@@ -144,7 +160,69 @@
 </div>
 
 
+<!-- -------------------------------------------------- BARRIOS ---------------------------------------------------- -->
 
+<div id="cpbarrio" class="container center-block oculto">
+    <div id="alertas_barrios"> </div>
+  
+    <h1 class="blue center title">Gestion y Control de Barrios</h1>
+    <button class="btn btn-primary agregar" id="agregarBarrio">Nuevo Barrio <span
+        class="glyphicon glyphicon-plus"></span></button>
+  
+    <div class="container">
+  
+      <form class="form-horizontal hidden" id="EditarBarrio">
+  
+        <div class="form-group">
+          <label for="editbarid" class="col-sm-offset-3 col-sm-2 control-label">Barrio:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="editbarid" placeholder="Id Barrio" required disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="editbarnom" class="col-sm-offset-3 col-sm-2 control-label">Nombre:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="editbarnom" placeholder="Nombre" required>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <button type="button" class="btn btn-default" id="CancelarActualizarBarrio">Cancelar</button>
+          <button type="submit" class="btn btn-success">Actualizar</button>
+        </div>
+      </form>
+  
+      <form class="form-horizontal hidden" id="CrearNuevoBarrio">
+  
+        <div class="form-group">
+          <label for="nombre" class="col-sm-offset-3 col-sm-2 control-label">Nombre:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="insbarnom" placeholder="Nombre" required>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <button type="button" class="btn btn-default" id="CancelarCrearBarrio">Cancelar</button>
+          <button type="submit" class="btn btn-success">Crear</button>
+        </div>
+      </form>
+    </div>
+  
+    <div class="table-responsive">
+      <table id="barrio_table" class="table table-hover">
+        <thead>
+          <tr class="blue">
+            <td>Barrio</td>
+            <td>Nombre</td>
+            <td>Editar</td>
+          </tr>
+        </thead>
+        <tbody id="Barrios_detalle">
+        </tbody>
+      </table>
+    </div>
+  </div>
 
 <script src="js/PaneldeControl.js"></script>
 <script src="js/PaneldeControlUsers.js"></script>
+<script src="js/PaneldeControlBarrios.js"></script>
