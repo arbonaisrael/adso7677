@@ -120,7 +120,7 @@
 		}
 
 		private static function Actualizar($obj){
-			$Paciente = $_POST['datos'];
+			$paciente = $_POST['datos'];
 
 			$comando = "UPDATE pacientes SET 
 			            pacientes.id_cedula = ?,
@@ -136,7 +136,7 @@
 			            pacientes.tp_paciente = ?, 
 			            pacientes.seguridad_social = ?
 			            WHERE pacientes.id_cedula = ?";
-			$sentencia = Self::$pdofull->prepare ( $insert );
+			$sentencia = Self::$pdofull->prepare ( $comando );
 			$sentencia->bindParam ( 1, $paciente['id_cedula']);
 			$sentencia->bindParam ( 2, $paciente['nombres']);
 			$sentencia->bindParam ( 3, $paciente['apellidos']);
@@ -155,7 +155,7 @@
 			if($resultado){
 				$obj->respuesta = array(
 						"estado" =>1,
-						"mensaje"=>"Inmobiliaria Actualizada Con Exito"
+						"mensaje"=>"Paciente Actualizad@ Con Exito"
 					);
 		}
 }
