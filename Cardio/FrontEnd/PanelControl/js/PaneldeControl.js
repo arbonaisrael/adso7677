@@ -1,7 +1,9 @@
-var ControlUsers   = false;
-var ControlBarrios = false;
-
-var UsuarioActual = jQuery.parseJSON(sessionStorage.getItem('user'));
+var ControlUsers        = false;
+var ControlBarrios      = false;
+var ControlCiudades     = false;
+var ControlMedicamentos = false;
+var ControlPacientes    = false;
+var UsuarioActual       = jQuery.parseJSON(sessionStorage.getItem('user'));
 
 $('#CerrarSesion').click(function(event) {
     sessionStorage.removeItem('user');
@@ -27,8 +29,44 @@ $('#ControlPanelBarrio').click(function(event) {
 		ControlBarrios = true;
 	}else{
 		ControlBarrios = false;
+    $('#n_img').removeClass('hidden');
 	}
 });
+
+
+$('#ControlPanelCiudad').click(function(event) {
+	if(!ControlCiudades){
+		$('#n_img').addClass('hidden');
+		listarCiudad();
+		ControlCiudades = true;
+	}else{
+		ControlCiudades = false;
+    $('#n_img').removeClass('hidden');
+	}
+});
+
+$('#ControlPanelMedicamento').click(function(event) {
+	if(!ControlMedicamentos){
+		$('#n_img').addClass('hidden');
+		listarMedicamento();
+		ControlMedicamentos = true;
+	}else{
+		ControlMedicamentos = false;
+    $('#n_img').removeClass('hidden');
+	}
+});
+
+$('#ControlPanelPaciente').click(function(event) {
+	if(!ControlPacientes){
+    $('#n_img').addClass('hidden');
+		listarPaciente();
+		ControlPacientes = true;
+	}else{
+		ControlPacientes = false;
+    $('#n_img').removeClass('hidden');
+	}
+});
+
 
 jQuery(document).ready(function(){
     $(".oculto").hide();              
