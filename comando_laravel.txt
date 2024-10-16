@@ -1,0 +1,17 @@
+-- INSTALACION DE LARAVEL 9
+composer create-project --prefer-dist laravel/laravel:^9.* adso7677-app
+
+
+
+-- INSTALAR LA AUTENTICACION
+
+-- Ejecutemos el siguiente comando para instalar el paquete laravel ui con el siguiente comando
+composer require laravel/ui
+
+
+php artisan ui bootstrap --auth
+
+--Ahora ejecutemos el siguiente comando para instalar npm:
+npm install 
+
+npm run dev
