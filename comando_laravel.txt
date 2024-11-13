@@ -18,8 +18,6 @@ npm run dev
 
 
 
-
-
 -- 	MIGRACIONES EN LARAVEL
 
 php artisan migrate
@@ -37,3 +35,28 @@ php artisan vendor:publish --tag=lang
 
 php artisan cache:clear
 php artisan config:clear
+
+
+
+-- ROLES Y PERMISOS EN LARAVEL
+
+Instalación
+¡Consulta la página de Requisitos previos para obtener consideraciones importantes sobre tus modelos de usuario !
+
+Este paquete publica un config/permission.phparchivo . Si ya tiene un archivo con ese nombre, debe cambiarle el nombre o eliminarlo.
+
+Puedes instalar el paquete a través de Composer :
+
+composer require spatie/laravel-permission
+
+
+
+Opcional: El proveedor de servicios se registrará automáticamente. O puede agregarlo manualmente a su config/app.phparchivo:
+
+
+Spatie\Permission\PermissionServiceProvider::class,
+
+
+Debes publicar la migración y el config/permission.phparchivo de configuración con:
+
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
