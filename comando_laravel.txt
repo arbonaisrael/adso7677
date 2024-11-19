@@ -60,3 +60,12 @@ Spatie\Permission\PermissionServiceProvider::class,
 Debes publicar la migración y el config/permission.phparchivo de configuración con:
 
 php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+
+
+
+
+-- CREACION DE TABLAS Y RELACIONES
+
+php artisan make:model Pais -a
+php artisan make:model Dpto -a
+php artisan make:model Ciudad -a
